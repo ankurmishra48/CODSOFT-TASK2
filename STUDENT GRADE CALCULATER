@@ -1,0 +1,72 @@
+package Practice.TASKS;
+
+import java.util.Scanner;
+
+public class Task2 {
+
+   public static void main(String args[]) {
+      // firstly we have to ask the user ,how many subject marks have you entered?
+      // for n subject
+      // int marks[];
+
+      System.out.println("Enter the number of subjects");
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      int[] marks = new int[n];
+
+      System.out.println("ENTER THE SUBJECT MARKS BETWEEN 1 TO 100");
+
+      for (int i = 0; i < n; i++) {
+         while (true) {
+            System.out.print("Enter mark for subject " + (i + 1) + ": ");
+            int mark = sc.nextInt();
+            if (mark >= 1 && mark <= 100) {
+               marks[i] = mark;
+               break;
+            } else {
+               System.out.println("Please enter a mark between 1 and 100.");
+            }
+         }
+      }
+
+      // for calculating the sum of marks
+      int sum = 0;
+
+      for (int i = 0; i < n; i++) {
+         sum += marks[i];
+      }
+      // System.out.println("sum of marks is"+sum);
+
+      // for calculating the average percenatge
+      float per = 0;
+
+      for (int i = 0; i < n; i++) {
+         per = sum / n;
+      }
+      // System.out.println("Total Average Percentage is"+per+"%");
+      // for calculating the grade system
+      char grade;
+      if (per >= 90) {
+         grade = 'A';
+      }
+      if (per >= 80) {
+         grade = 'B';
+      }
+      if (per >= 70) {
+         grade = 'C';
+      }
+      if (per >= 60) {
+         grade = 'D';
+      }
+      if (per >= 50) {
+         grade = 'E';
+      } else {
+         grade = 'G';
+      }
+      // DISPLAY RESULT
+      System.out.println("THE SUM OF MARKS IS-" + sum);
+      System.out.println("THE AVERAGE PERCENTAGE IS-" + per + "%");
+      System.out.println("THE GRADE IS-" + grade);
+
+   }
+}
